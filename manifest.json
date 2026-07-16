@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "fs.sovereign.ledger",
+  "name": "Ledger",
+  "version": "0.1.0",
+  "description": "Budget-first personal finance tracker with savings jars and multi-currency, plus a net-worth asset overview.",
+  "type": "sovereign",
+  "runtime": "native",
+  "routePrefix": "/ledger",
+  "shell": "default",
+  "icon": "icon.svg",
+  "database": "shared",
+  "permissions": [
+    "auth:session",
+    "db:readWrite",
+    "data:provide",
+    "data:export",
+    "data:import",
+    "activity:write",
+    "notifications:send"
+  ],
+  "repository": "https://github.com/sovereignfs/sovereign-ledger",
+  "compatibility": {
+    "minPlatformVersion": "0.26.4"
+  }
+}
