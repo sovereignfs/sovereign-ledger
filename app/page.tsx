@@ -11,6 +11,14 @@ export default function LedgerIndexPage() {
       />
 
       <section className={styles.categoryGrid} aria-label="Ledger sections">
+        <Link href="/ledger/categories" className={styles.categoryLink}>
+          <Card interactive className={styles.categoryCard}>
+            <h2 className={styles.categoryTitle}>Categories</h2>
+            <p className={styles.categoryDescription}>
+              Group your spending into categories and subcategories.
+            </p>
+          </Card>
+        </Link>
         <Link href="/ledger/settings" className={styles.categoryLink}>
           <Card interactive className={styles.categoryCard}>
             <h2 className={styles.categoryTitle}>Settings</h2>

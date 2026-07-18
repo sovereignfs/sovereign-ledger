@@ -2,9 +2,10 @@
 
 import { useActionState } from 'react';
 import { Button, FormField, Input, Select } from '@sovereignfs/ui';
-import type { ActionResult, SettingsData } from '../_lib/actions';
+import type { SettingsData } from '../_lib/actions';
 import { updateSettings } from '../_lib/actions';
 import { CURRENCIES } from '../_lib/currencies';
+import type { ActionResult } from '../_lib/db';
 import styles from './SettingsForm.module.css';
 
 export function SettingsForm({ settings }: { settings: SettingsData }) {

@@ -126,7 +126,8 @@ Requirement IDs (`LDG-*`) are stable — never renumber or reuse one.
 | --- | --- | --- |
 | 0 | Plugin scaffold (manifest, schema, migrations, base app shell) | ✅ shipped |
 | 1 | Settings — base currency, display currency, month-start day | ✅ shipped |
-| 2–6 | Finance Tracker v0.1 — categories, budgets, income, expenses, monthly overview | 📋 not started |
+| 2 | Category tree — create/edit/archive categories and subcategories | ✅ shipped |
+| 3–6 | Finance Tracker v0.1 — budgets, income, expenses, monthly overview | 📋 not started |
 | 7 | Jars core | 📋 not started |
 | 8–9 | Fixed and recurring | 📋 not started |
 | 10–13 | Multi-currency | 📋 not started |
@@ -158,7 +159,7 @@ This plugin follows its own semver, independent of the platform version:
 - `feat/` → minor (0.x.0)
 - Breaking change → major (x.0.0)
 
-Current version: **0.2.0**
+Current version: **0.3.0**
 
 ## Running locally
 
