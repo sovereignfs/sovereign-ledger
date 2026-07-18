@@ -1,14 +1,22 @@
 import Link from 'next/link';
 import { Card, PageHeader } from '@sovereignfs/ui';
+import { MonthlyOverview } from './_components/MonthlyOverview';
+import { getMonthlyOverview } from './_lib/overviewActions';
 import styles from './page.module.css';
 
-export default function LedgerIndexPage() {
+export default async function LedgerIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ period?: string }>;
+}) {
+  const { period } = await searchParams;
+  const overview = await getMonthlyOverview(period);
+
   return (
     <div className={styles.page}>
-      <PageHeader
-        title="Ledger"
-        description="Budget, expenses, and jars are on the way — see roadmap.md."
-      />
+      <PageHeader title="Ledger" description="Your monthly budget, at a glance." />
+
+      <MonthlyOverview overview={overview} />
 
       <section className={styles.categoryGrid} aria-label="Ledger sections">
         <Link href="/ledger/categories" className={styles.categoryLink}>

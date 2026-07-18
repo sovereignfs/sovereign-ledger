@@ -130,7 +130,7 @@ Requirement IDs (`LDG-*`) are stable — never renumber or reuse one.
 | 3 | Budgets — default monthly amount per category, per-month overrides | ✅ shipped |
 | 4 | Income sources & entries — create/edit/archive sources, record income | ✅ shipped |
 | 5 | Expense logging — log a daily expense, edit/soft-delete | ✅ shipped |
-| 6 | Monthly overview — totals, budget-vs-actual variance | 📋 not started |
+| 6 | Monthly overview — totals, budget-vs-actual variance | ✅ shipped |
 | 7 | Jars core | 📋 not started |
 | 8–9 | Fixed and recurring | 📋 not started |
 | 10–13 | Multi-currency | 📋 not started |
@@ -162,7 +162,7 @@ This plugin follows its own semver, independent of the platform version:
 - `feat/` → minor (0.x.0)
 - Breaking change → major (x.0.0)
 
-Current version: **0.6.0**
+Current version: **0.7.0**
 
 ## Running locally
 

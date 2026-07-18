@@ -1,0 +1,138 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-4);
+}
+
+.periodNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.periodLabel {
+  margin: 0;
+  font-size: var(--sv-font-size-lg);
+  font-weight: 600;
+  color: var(--sv-color-text-primary);
+}
+
+.periodLink {
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-muted);
+  text-decoration: none;
+}
+
+.periodLink:hover {
+  color: var(--sv-color-text-primary);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--sv-space-3);
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-1);
+}
+
+.statLabel {
+  margin: 0;
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-muted);
+}
+
+.statValue {
+  margin: 0;
+  font-size: var(--sv-font-size-xl);
+  font-weight: 700;
+  color: var(--sv-color-text-primary);
+}
+
+.statValueNegative {
+  margin: 0;
+  font-size: var(--sv-font-size-xl);
+  font-weight: 700;
+  color: var(--sv-color-error-text);
+}
+
+.groupCard,
+.varianceCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-3);
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: var(--sv-font-size-md);
+  font-weight: 600;
+  color: var(--sv-color-text-primary);
+}
+
+.groupList {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-2);
+}
+
+.groupRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-primary);
+}
+
+.groupRow dt {
+  color: var(--sv-color-text-muted);
+}
+
+.groupRow dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.varianceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-2);
+}
+
+.varianceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sv-space-3);
+  flex-wrap: wrap;
+  padding: var(--sv-space-2) 0;
+  font-size: var(--sv-font-size-sm);
+}
+
+.varianceRow + .varianceRow {
+  border-top: 1px solid var(--sv-color-border);
+}
+
+.varianceLabel {
+  color: var(--sv-color-text-primary);
+  margin-right: auto;
+}
+
+.varianceActual {
+  color: var(--sv-color-text-muted);
+}
+
+.variancePositive {
+  color: var(--sv-color-success-text);
+  font-weight: 600;
+}
+
+.varianceNegative {
+  color: var(--sv-color-error-text);
+  font-weight: 600;
+}
