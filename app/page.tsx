@@ -35,6 +35,12 @@ export default function LedgerIndexPage() {
             </p>
           </Card>
         </Link>
+        <Link href="/ledger/expenses" className={styles.categoryLink}>
+          <Card interactive className={styles.categoryCard}>
+            <h2 className={styles.categoryTitle}>Expenses</h2>
+            <p className={styles.categoryDescription}>Log what you spend, day to day.</p>
+          </Card>
+        </Link>
         <Link href="/ledger/settings" className={styles.categoryLink}>
           <Card interactive className={styles.categoryCard}>
             <h2 className={styles.categoryTitle}>Settings</h2>

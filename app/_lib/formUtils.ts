@@ -14,3 +14,12 @@ export function formOptionalString(formData: FormData, key: string): string | nu
   const value = formString(formData, key);
   return value === '' ? null : value;
 }
+
+/** Today as a local (not UTC) 'YYYY-MM-DD' string — for `<input type="date">`
+ * defaults, so a new expense defaults to the user's local today rather than
+ * drifting a day off around UTC midnight. */
+export function todayLocalDateOnly(): string {
+  const d = new Date();
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}

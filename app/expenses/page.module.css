@@ -1,0 +1,19 @@
+.page {
+  padding: var(--sv-space-8) var(--sv-space-6);
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-6);
+}
+
+.categoriesLink {
+  align-self: center;
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-muted);
+  text-decoration: underline;
+}
+
+.categoriesLink:hover {
+  color: var(--sv-color-text-primary);
+}
