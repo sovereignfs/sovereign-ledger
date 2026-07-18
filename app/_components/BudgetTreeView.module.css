@@ -1,0 +1,61 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-4);
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-3);
+}
+
+.row,
+.subRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sv-space-2);
+}
+
+.subRow {
+  padding-top: var(--sv-space-2);
+  padding-left: var(--sv-space-4);
+  border-top: 1px solid var(--sv-color-border);
+}
+
+.rowHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--sv-space-2);
+  flex-wrap: wrap;
+}
+
+.name {
+  font-weight: 600;
+  color: var(--sv-color-text-primary);
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sv-space-3);
+  flex-wrap: wrap;
+}
+
+.overridesLink {
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-muted);
+  text-decoration: underline;
+}
+
+.overridesLink:hover {
+  color: var(--sv-color-text-primary);
+}
+
+.subList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-2);
+}

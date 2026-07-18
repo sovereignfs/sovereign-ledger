@@ -19,6 +19,14 @@ export default function LedgerIndexPage() {
             </p>
           </Card>
         </Link>
+        <Link href="/ledger/budgets" className={styles.categoryLink}>
+          <Card interactive className={styles.categoryCard}>
+            <h2 className={styles.categoryTitle}>Budgets</h2>
+            <p className={styles.categoryDescription}>
+              Set a default monthly amount per category, with overrides.
+            </p>
+          </Card>
+        </Link>
         <Link href="/ledger/settings" className={styles.categoryLink}>
           <Card interactive className={styles.categoryCard}>
             <h2 className={styles.categoryTitle}>Settings</h2>

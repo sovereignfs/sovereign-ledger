@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sv-space-1);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: var(--sv-space-2);
+}
+
+.currency {
+  font-size: var(--sv-font-size-sm);
+  color: var(--sv-color-text-muted);
+}
+
+.amountInput {
+  width: 6.5rem;
+}
+
+.feedbackError {
+  margin: 0;
+  font-size: var(--sv-font-size-xs);
+  color: var(--sv-color-error-text);
+}

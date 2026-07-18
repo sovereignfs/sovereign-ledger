@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "fs.sovereign.ledger",
   "name": "Ledger",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Budget-first personal finance tracker with savings jars and multi-currency, plus a net-worth asset overview.",
   "type": "sovereign",
   "runtime": "native",
