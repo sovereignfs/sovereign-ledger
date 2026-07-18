@@ -79,11 +79,14 @@ All plugin tables are prefixed `ledger_`:
 - `ledger_fx_rates`
 - `ledger_assets`, `ledger_asset_snapshots`, `ledger_people` (post-MVP)
 
-Schema lives in `db/schema.ts` (SQLite-core — the one application code
-queries against, regardless of the platform's actual configured dialect) and
-`db/schema.postgres.ts` (Postgres-core mirror, migration-generation only —
-never imported by application code). See `db/schema.ts`'s own header comment
-for the full column-type conventions (IDs, timestamps, booleans).
+Schema lives in `app/_db/schema.ts` (SQLite-core — the one application code
+queries against, regardless of the platform's actual configured dialect;
+lives under `app/` because only that tree is composed into the runtime's
+route table, not plugin-root `db/`) and `db/schema.postgres.ts` (Postgres-core
+mirror, migration-generation only — never imported by application code).
+`db/schema.ts` is a thin `export * from '../app/_db/schema'` re-export for
+drizzle-kit and repo-root tooling. See `app/_db/schema.ts`'s own header
+comment for the full column-type conventions (IDs, timestamps, booleans).
 
 ## Background jobs (scheduler constraints)
 
@@ -122,7 +125,8 @@ Requirement IDs (`LDG-*`) are stable — never renumber or reuse one.
 | Task | Description | Status |
 | --- | --- | --- |
 | 0 | Plugin scaffold (manifest, schema, migrations, base app shell) | ✅ shipped |
-| 1–6 | Finance Tracker v0.1 — settings, categories, budgets, income, expenses, monthly overview | 📋 not started |
+| 1 | Settings — base currency, display currency, month-start day | ✅ shipped |
+| 2–6 | Finance Tracker v0.1 — categories, budgets, income, expenses, monthly overview | 📋 not started |
 | 7 | Jars core | 📋 not started |
 | 8–9 | Fixed and recurring | 📋 not started |
 | 10–13 | Multi-currency | 📋 not started |
@@ -154,7 +158,7 @@ This plugin follows its own semver, independent of the platform version:
 - `feat/` → minor (0.x.0)
 - Breaking change → major (x.0.0)
 
-Current version: **0.1.0**
+Current version: **0.2.0**
 
 ## Running locally
 
@@ -165,7 +169,7 @@ the platform monorepo root:
 pnpm dev   # starts runtime on :3000; plugin routes are available at /ledger
 ```
 
-After changing the database schema (`db/schema.ts`), hand-author a matching
+After changing the database schema (`app/_db/schema.ts`), hand-author a matching
 migration under `migrations/sqlite/` (no generate step for SQLite — append an
 entry to `migrations/sqlite/meta/_journal.json`), then regenerate the
 Postgres mirror:

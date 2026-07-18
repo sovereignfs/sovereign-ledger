@@ -36,7 +36,7 @@ The plugin is developed as a `.local` workspace member inside the platform monor
 pnpm dev   # runtime on :3000; plugin routes live at /ledger
 ```
 
-After changing the database schema (`db/schema.ts`), hand-author a matching
+After changing the database schema (`app/_db/schema.ts`), hand-author a matching
 SQLite migration under `migrations/sqlite/` (no generate step for SQLite),
 append an entry to `migrations/sqlite/meta/_journal.json`, and regenerate the
 Postgres migration via:
