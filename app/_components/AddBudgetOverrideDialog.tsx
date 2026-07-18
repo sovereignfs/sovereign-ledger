@@ -4,7 +4,7 @@ import { useActionState, useEffect, useState } from 'react';
 import { Button, Dialog, FormField, Input } from '@sovereignfs/ui';
 import { addBudgetOverride } from '../_lib/budgetActions';
 import type { ActionResult } from '../_lib/db';
-import styles from './CategoryDialogs.module.css';
+import styles from './DialogForm.module.css';
 
 export function AddBudgetOverrideDialog({
   categoryId,

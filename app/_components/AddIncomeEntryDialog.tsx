@@ -2,20 +2,20 @@
 
 import { useActionState, useEffect, useState } from 'react';
 import { Button, Dialog, FormField, Input } from '@sovereignfs/ui';
-import { createSubcategory } from '../_lib/categoryActions';
 import type { ActionResult } from '../_lib/db';
+import { addIncomeEntry } from '../_lib/incomeActions';
 import styles from './DialogForm.module.css';
 
-export function AddSubcategoryDialog({
-  parentId,
-  parentName,
+export function AddIncomeEntryDialog({
+  sourceId,
+  currency,
 }: {
-  parentId: string;
-  parentName: string;
+  sourceId: string;
+  currency: string;
 }) {
   const [open, setOpen] = useState(false);
   const [state, formAction, pending] = useActionState<ActionResult | null, FormData>(
-    createSubcategory,
+    addIncomeEntry,
     null,
   );
 
@@ -25,31 +25,34 @@ export function AddSubcategoryDialog({
 
   return (
     <>
-      <Button type="button" variant="ghost" size="sm" onClick={() => setOpen(true)}>
-        Add subcategory
+      <Button type="button" onClick={() => setOpen(true)}>
+        Record income
       </Button>
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        size="sm"
-        title={`New subcategory in ${parentName}`}
-      >
+      <Dialog open={open} onClose={() => setOpen(false)} size="sm" title="Record income">
         <form action={formAction} className={styles.form}>
           {state && !state.ok && (
             <p className={styles.feedbackError} role="status" aria-live="polite">
               {state.error}
             </p>
           )}
-          <input type="hidden" name="parentId" value={parentId} />
-          <FormField label="Name" required>
-            {(field) => <Input {...field} name="name" required placeholder="Rent" />}
+          <input type="hidden" name="sourceId" value={sourceId} />
+          <FormField label="Month" required>
+            {(field) => <Input {...field} name="period" type="month" required />}
+          </FormField>
+          <FormField label={`Amount (${currency})`} required>
+            {(field) => (
+              <Input {...field} name="amount" type="number" step="0.01" min="0.01" required />
+            )}
+          </FormField>
+          <FormField label="Note">
+            {(field) => <Input {...field} name="note" placeholder="Optional" />}
           </FormField>
           <div className={styles.actions}>
             <Button type="button" variant="secondary" onClick={() => setOpen(false)}>
               Cancel
             </Button>
             <Button type="submit" disabled={pending}>
-              {pending ? 'Adding…' : 'Add subcategory'}
+              {pending ? 'Saving…' : 'Save entry'}
             </Button>
           </div>
         </form>

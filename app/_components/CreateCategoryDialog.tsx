@@ -5,7 +5,7 @@ import { Button, Dialog, FormField, Input, Select } from '@sovereignfs/ui';
 import { createCategory } from '../_lib/categoryActions';
 import { CATEGORY_GROUPS } from '../_lib/categoryGroups';
 import type { ActionResult } from '../_lib/db';
-import styles from './CategoryDialogs.module.css';
+import styles from './DialogForm.module.css';
 
 export function CreateCategoryDialog() {
   const [open, setOpen] = useState(false);
