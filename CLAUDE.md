@@ -162,7 +162,7 @@ This plugin follows its own semver, independent of the platform version:
 - `feat/` → minor (0.x.0)
 - Breaking change → major (x.0.0)
 
-Current version: **0.7.0**
+Current version: **0.7.1**
 
 ## Running locally
 
